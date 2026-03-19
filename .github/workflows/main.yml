@@ -22,14 +22,5 @@ jobs:
       - name: Install Verified Agent Identity
         run: clawhub install verified-agent-identity
 
-      - name: Install dependencies
-        run: |
-          cd scripts
-          npm install
-
-      - name: Create Ethereum Identity
-        run: node scripts/createNewEthereumIdentity.js
-
-      - name: Link Human to Agent
-        run: |
-          node scripts/manualLinkHumanToAgent.js --challenge '{"name":"lontong6","description":"lontong6 AI Agent"}'
+      - - name: Run Verified Agent Identity
+  run: clawhub run verified-agent-identity --challenge '{"name":"lontong6","description":"lontong6 AI Agent"}'
